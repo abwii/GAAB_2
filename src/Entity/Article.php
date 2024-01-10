@@ -30,6 +30,9 @@ class Article
     #[ORM\Column(length: 255)]
     private ?string $auteur = null;
 
+    #[ORM\Column(length: 255)]
+    private ?int $id_author = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -94,6 +97,18 @@ class Article
 
         return $this;
     }
-}
+
+    public function getIdAuthor(): ?int
+    {
+        return $this->id_author;
+    }
+
+    public function setIdAuthor(int $id_author): static
+    {
+        $this->id_author = $id_author;
+
+        return $this;
+    }
+    }
 
 
